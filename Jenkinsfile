@@ -3,6 +3,11 @@ pipeline {
         label 'docker-in-docker'
     }
     stages {
+         stage('Init') {
+            steps {
+                checkout scm
+             }
+        }
         stage('Build') { 
             steps {
                 sh 'mvn compile' 
